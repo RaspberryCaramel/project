@@ -1,0 +1,27 @@
+<MongoDB API>
+
+1. 개념
+	1)db : database, db를 저장할 디스크
+	2)collections : table과 같은 개념(?) 디스크 안의 폴더같은 개념으로 이 안에 문서들을 저장하면 된다
+		** collection(document)들 => collections
+	3)document : collections에 저장한 문서들 안에 field값을 가지고 있음
+	4)data type : json(?)
+		{ 'key' : 'value', 'key2' : 'value'}
+	5)schema : 데이터베이스에서 자료의 구조, 표현방법, 자료간의 관계를 형식언어로
+		
+	
+2. 참고
+	docs.mongodb.com/manuel/reference
+	
+3. 기본 api
+	
+	1)use <db name> : db 생성 및 진입
+	
+	2) <name> = db.<collection name> alias지정
+	3) insert	: collection에 문서 생성
+	4) update	: 문서 수정
+	5) save	: 컬렉션(?클래스 => 변수)을 저장 이 때 해당하는 변수 이름에 대한 아이디를 저장. 없을땐 생성, 있을땐 수정
+	6) delete 	: 삭제 ( 해당하는 키:값을 가지는 것을)
+	7) find	: 검색(collection에서 사용하면 문서검색)
+	
+	
