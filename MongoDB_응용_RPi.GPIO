@@ -1,0 +1,21 @@
+<MongoDB_응용_RPi-GPIO>
+
+*** LED Switch On/Off ***
+
+1. DB에 있는 스위치 값을 가져와서 값에 따라 행동
+
+시스템 구성
+
+라즈베리				웹(http)(user)			몽고db
+ LED(B.12)			Get(db_find)		Database(user)
+ Get(web)			Post(db_save)		
+ 					Put(db_update)
+ 					Delete(db_delete)
+ 
+ 
+ 	1)	라즈베리 : web에서 받은 data
+ 	2)	웹		: db에 연결하여 해당하는 값 받아옴
+ 	3)	몽고db	: user/pw 인증받아서 작동하도록 설정
+ 	
+
+2. 웹(express.js)에서 해당하는 메소드 구현

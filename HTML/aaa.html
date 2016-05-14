@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <script type= "text/javascript">
+    function changeBg(){
+      var imgElement = document.getElementById("image1");
+      // var frm = document.getElementById("frm1");
+      console.log(imgElement.src);
+      if(imgElement.src.match("image1")){
+        imgElement.src="./image2.png";
+      }
+      else{
+        imgElement.src="./image1.png";
+      }
+    }
+
+  </script>
+
+  </head>
+
+  <body>
+
+    <img id= "image1" src="./image1.png">
+    <p>클릭해봐</p>
+    <input id="imageButton" value="image change" type="button">
+
+    <script>
+      var buttonElement = document.getElementById("imageButton");
+      buttonElement.addEventListener("click",changeBg);
+    </script>
+  </body>
+  </html>
