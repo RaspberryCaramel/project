@@ -1,0 +1,45 @@
+<mongoDB 사용자 인증>
+
+** < > = String type
+
+1. mongodb Server생성시 --auth or mongodb.cong에 auth=true  설정으로 인증서버 생성
+
+2. 유저 생성 방법 및 사용법
+
+	****raspi : 32bit, other-os : 64bit***
+		버전이 달라서 명령어가 다르며 실습에 지장이 있음
+		둘중에 한쪽이 서버 - 클라이언트가 될 시에 문제생김
+		비인증서버로 생성시엔 사용에 문제가 없음
+		64bit 기준으로 설명
+	
+	**** Database 와 User의 관계 ****
+		유저는 database에 종속되는 관계이며 유저는 그 안에서
+		권한을 받아 db를 사용하게 된다.
+		이 때 권한은 roles: [] 에 명시하게 되며 권한은 
+		https://docs.mongodb.com/manual/reference/built-in-roles
+		몽고디비 사이트 - 레퍼런스 - built-in-roles에서 권한 이름 및 권한에 따른 사용가능 명령어를 볼 수 있다.
+		
+	1)생성방법 
+		db.createUser({
+		user : <id> ,
+		pwd	 : <passwd>,
+		roles : [<role_name>]
+		})
+	db는 지금 들어와있는 db를 뜻함. 처음에 접속해서 설정을 안해주면 test db로 들어와지는데 이때 유저를 생성하면 test db 에서만 명령을 내릴 수 있는 유저임
+	db name중에 admin은 다른 db를 건드릴 수 있는 마스터db임
+	admin에서 다른 db까지 컨트롤 하는 마스터 유저를 만들 땐 
+	superRole을 부여해주면 된다.
+	
+	2) 롤 추가 방법
+		db.grantRoleToUser(<user>,[<role>])
+		
+		
+		
+
+3. express.js에서 접속 할때 방법
+ mongoose url경로에서 mongodb://<id>:<pwd>@<ip>/<db name>
+ 
+ 
+ 
+
+
