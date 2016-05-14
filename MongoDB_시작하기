@@ -3,7 +3,15 @@
 1. 설치방법 
 
  mongodb.com 해당하는 os에 맞게 설치
- ubuntu -> apt-get install mongodb
+ ubuntu -> https://docs.mongodb.com/master/installation/ 참고
+
+ ubuntu 환경 설치 방법:  몽고디비 버전 3.2.6 버전
+	sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+	echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+	sudo apt-get update
+	sudo apt-get install -y mongodb-org
+
+
  
 2. 설정방법
 
